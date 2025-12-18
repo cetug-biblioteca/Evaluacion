@@ -929,18 +929,18 @@
             REPO: 'cetug-biblioteca/Evalua'  // ← REEMPLAZA con tu usuario/repo
         };
 
-       // (function setupToken() {
-        //    const savedToken = localStorage.getItem('github_token');
-       //     if (savedToken && savedToken.startsWith('ghp_')) {
-      //          GITHUB_CONFIG.TOKEN = savedToken;
-     //       } else if (window.location.hostname.includes('github.io')) {
-     //           const token = prompt('🔐 Ingresa token GitHub (ghp_...):');
-     //           if (token && token.startsWith('ghp_')) {
-      //              localStorage.setItem('github_token', token);
-      //              GITHUB_CONFIG.TOKEN = token;
-           //     }
-         //   }
-       // })();//
+        (function setupToken() {
+           const savedToken = localStorage.getItem('github_token');
+            if (savedToken && savedToken.startsWith('ghp_')) {
+                GITHUB_CONFIG.TOKEN = savedToken;
+            } else if (window.location.hostname.includes('github.io')) {
+                const token = prompt('🔐 Ingresa token GitHub (ghp_...):');
+                if (token && token.startsWith('ghp_')) {
+                    localStorage.setItem('github_token', token);
+                    GITHUB_CONFIG.TOKEN = token;
+                }
+            }
+        })();
         
         // ========== CONFIGURACIÓN DEL SISTEMA ==========
         const SECURITY_CONFIG = {
